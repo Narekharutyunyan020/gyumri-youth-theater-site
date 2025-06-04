@@ -1,0 +1,108 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #111;
+  color: #fff;
+  border-radius: 15px;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+}
+
+.menuToggle {
+  font-size: 2rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.active {
+  color: #ffcc00;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .searchInput {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .subscribeButton {
+    padding: 0.5rem 1rem;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      background-color: #ffaa00;
+    }
+  }
+}
+.navLink {
+  position: relative;
+  color: #333; 
+  text-decoration: none;
+  padding-bottom: 4px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: #27ae60; 
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  &:hover::after,
+  &.active::after {
+    width: 100%;
+  }
+
+  &:hover {
+    color: #27ae60; 
+  }
+}

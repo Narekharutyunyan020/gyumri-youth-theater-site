@@ -38,15 +38,7 @@
   display: flex;
   gap: 1.5rem;
 
-  a {
-    color: #ccc;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-      color: #fff;
-    }
-  }
+  /* Այստեղ պետք է չօգտագործես իրանցան a, այլ NavLink-ի սթայլը լինի */
 }
 
 .active {
@@ -77,9 +69,10 @@
     }
   }
 }
+
 .navLink {
   position: relative;
-  color: #333; 
+  color: #ccc;  /* փոխեցի մոխրագույն, որ ավելի համապատասխանի սև ֆոնին */
   text-decoration: none;
   padding-bottom: 4px;
   font-weight: 600;
@@ -92,7 +85,7 @@
     bottom: 0;
     height: 3px;
     width: 0;
-    background-color: #27ae60; 
+    background-color: #27ae60;
     transition: width 0.3s ease;
     border-radius: 2px;
   }
@@ -103,6 +96,10 @@
   }
 
   &:hover {
-    color: #27ae60; 
+    color: #27ae60;
+  }
+
+  &.active {
+    color: #ffcc00;
   }
 }

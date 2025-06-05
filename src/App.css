@@ -1,4 +1,11 @@
-.container {
+ *{
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  
+ }
+ .container {
   max-width: 1240px;
   margin: 0 auto;
   padding-left: 20px;

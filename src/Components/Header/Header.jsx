@@ -9,14 +9,9 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className={`container ${s.main}`}>
+    <div className={s.main}>
       <header className={s.header}>
-        <Link to="/" onClick={closeMenu}>
-          <div className={s.leftSection}>
-            <img src="/Images/Logo1.jpg" alt="Logo" />
-            <h1>Youth Theater</h1>
-          </div>
-        </Link>
+
 
         <div className={s.burger} onClick={toggleMenu}>
           <span className={menuOpen ? s.open1 : ''}></span>
@@ -31,15 +26,21 @@ const Header = () => {
           <NavLink to="/Actors" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
             Դերասաններ
           </NavLink>
+          <Link to="/" onClick={closeMenu}>
+            <div className={s.leftSection}>
+              <img src="/Images/Logo1.jpg" alt="Logo" />
+              <h1>Youth Theater</h1>
+            </div>
+          </Link>
           <NavLink to="/Մերմասին" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
             Մեր Մասին
           </NavLink>
           <NavLink to="/Ներկայացումներ" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
             Ներկայացումներ
           </NavLink>
-          <NavLink to="/կապ" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
+          {/* <NavLink to="/կապ" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
             Կապ
-          </NavLink>
+          </NavLink> */}
         </nav>
       </header>
     </div>

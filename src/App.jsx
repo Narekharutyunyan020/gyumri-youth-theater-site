@@ -24,3 +24,12 @@ export default function App() {
     </BrowserRouter>
   )
 }
+  {/* <form className={s.rightSection} onSubmit={handleSubmit(onSubmit)}>
+                    <input
+                        type="text"
+                        placeholder="Փնտրել ներկայացում..."
+                        className={s.searchInput}
+                        {...register("search")}
+                    />
+                    <button className={s.subscribeButton}>Փնտրել</button>
+                </form> */}

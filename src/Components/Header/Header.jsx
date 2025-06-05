@@ -1,73 +1,49 @@
-
+import { useState } from 'react';
+import { Link, NavLink } from "react-router-dom";
 import s from './Header.module.scss';
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
-    return (
-        <div className={`container${s.main}`}>
-            <header className={s.header}>
-                <Link to="/">
-                    <div className={s.leftSection}>
-                        <img src="/Logo.png" alt="Logo" />
-                        <h1>
-                            Youth Theater
-                        </h1>
-                    </div>
-                </Link>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-                <nav className={s.nav}>
-                    <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                            `${s.navLink} ${isActive ? s.active : ''}`
-                        }
-                    >
-                        Գլխավոր
-                    </NavLink>
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+  const closeMenu = () => setMenuOpen(false);
 
-                    <NavLink
-                        to="/Actors"
-                        className={({ isActive }) =>        `${s.navLink} ${isActive ? s.active : ''}`
-                        }
-                    >
-                        Դերասաններ
-                    </NavLink>
-                    <NavLink
-                        to="/Մերմասին"
-                        className={({ isActive }) =>       `${s.navLink} ${isActive ? s.active : ''}`
-                        }
-                    >
-                        Մեր Մասին
-                    </NavLink>
-                    <NavLink
-                        to="/Ներկայացումներ"
-                        className={({ isActive }) =>       `${s.navLink} ${isActive ? s.active : ''}`
-                        }
-                    >
-                        Ներկայացումներ
-                    </NavLink>
-                    <NavLink
-                        to="/կապ"
-                        className={({ isActive }) =>       `${s.navLink} ${isActive ? s.active : ''}`
-                        }
-                    >
-                        Կապ
-                    </NavLink>
+  return (
+    <div className={`container ${s.main}`}>
+      <header className={s.header}>
+        <Link to="/" onClick={closeMenu}>
+          <div className={s.leftSection}>
+            <img src="/Images/Logo1.jpg" alt="Logo" />
+            <h1>Youth Theater</h1>
+          </div>
+        </Link>
 
-                </nav>
-
-                {/* <form className={s.rightSection} onSubmit={handleSubmit(onSubmit)}>
-                    <input
-                        type="text"
-                        placeholder="Փնտրել ներկայացում..."
-                        className={s.searchInput}
-                        {...register("search")}
-                    />
-                    <button className={s.subscribeButton}>Փնտրել</button>
-                </form> */}
-            </header>
+        <div className={s.burger} onClick={toggleMenu}>
+          <span className={menuOpen ? s.open1 : ''}></span>
+          <span className={menuOpen ? s.open2 : ''}></span>
+          <span className={menuOpen ? s.open3 : ''}></span>
         </div>
-    )
-}
 
-export default Header
+        <nav className={`${s.nav} ${menuOpen ? s.showMenu : ''}`}>
+          <NavLink to="/" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
+            Գլխավոր
+          </NavLink>
+          <NavLink to="/Actors" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
+            Դերասաններ
+          </NavLink>
+          <NavLink to="/Մերմասին" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
+            Մեր Մասին
+          </NavLink>
+          <NavLink to="/Ներկայացումներ" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
+            Ներկայացումներ
+          </NavLink>
+          <NavLink to="/կապ" className={({ isActive }) => `${s.navLink} ${isActive ? s.active : ''}`} onClick={closeMenu}>
+            Կապ
+          </NavLink>
+        </nav>
+      </header>
+    </div>
+  );
+};
+
+export default Header;

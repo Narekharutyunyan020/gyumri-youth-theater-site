@@ -14,9 +14,9 @@ const Footer = () => {
         <nav className={s.nav}>
           <Link to="/">Գլխավոր</Link>
           <Link to="/actors">Դերասաններ</Link>
-          <Link to="/about">Մեր մասին</Link>
-          <Link to="/shows">Ներկայացումներ</Link>
-          <Link to="/contact">Կապ</Link>
+          <Link to="/Մերմասին">Մեր մասին</Link>
+          <Link to="/Ներկայացումներ">Ներկայացումներ</Link>
+          <Link to="/Կապ">Կապ</Link>
         </nav>
 
         <div className={s.contact}>

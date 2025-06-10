@@ -2,14 +2,14 @@
   background-color: #222;
   color: #fff;
   padding: 2rem 1rem;
-  border-radius: 15px;
+border-radius: 15px 15px 0 0;
+
   .container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2rem;
   }
-
   .leftSection,
   .nav,
   .contact {
